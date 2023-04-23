@@ -2,7 +2,6 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Exercise } from './app.controller';
 import { TestsService } from './tests.service';
 import * as vm from 'vm';
-import * as VM from 'vm2';
 
 type Input = {
   [property: string]: any;
@@ -43,10 +42,10 @@ export class AppService {
       const inputs = [
         [1, 2],
         [4, 5],
-        [10, 20]
+        [10, 20],
       ];
 
-      const expectedOutputs = [  "3",  "9",  "30"];
+      const expectedOutputs = ['3', '9', '30'];
       const results = [];
       for (const testCase of tests) {
         const result = this.testPythonCode(code, inputs, expectedOutputs);
